@@ -1,9 +1,9 @@
 <template>
     <div class="card">
         <img :src="character.sprites.front_default" class="card-img-top" alt="Pokemon">
-        <div class="card-body">
-            <h5 class="card-title">{{ character.name }}</h5>
-            <router-link :to="{ name: 'CharacterView' , params: { id: character.id }}"  class="btn btn-primary">Ver detalle</router-link>
+        <div class="card-body card__contenido">
+            <h5 class="card-title card__titulos">{{ character.name }}</h5>
+            <router-link :to="{ name: 'CharacterView' , params: { id: character.id }}"  class="btn btn-primary card__boton">Ver detalle</router-link>
         </div>
     </div>  
 </template>
@@ -23,10 +23,6 @@ export default {
             })
         }
     },
-
-    // mounted () {
-    //     console.log(this.character)
-    // }
 }
 </script>
 
@@ -45,29 +41,29 @@ export default {
     border: 2px solid #FFCB05;
 }
 
-.card-body{
+.card__contenido{
     background-color: #3a5da898;
     border-top: 2px solid #3A5DA8;
     border-radius: 0px 0px 8px 8px;
 }
 
-.card-body:hover{
+.card__contenido:hover{
     border-top: 2px solid #FFCB05;
 }
 
-.card-title{
+.card__titulos{
     color: white;
     font-size: 30px;
     text-shadow: 1px 1px 3px blue;
 }
 
-.btn{
+.card__boton{
     background-color: #f8d95d;
     box-shadow: 5px 5px 10px black;
     color: black;
 }
 
-.btn:hover{
+.card__boton:hover{
     background-color: #FFCB05;
     border: none;
 }

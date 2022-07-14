@@ -1,21 +1,23 @@
 <template>
-   <section class="container conten-personaje">
-        <div class="detalles">
-            <div class="conten-img">
-                <img :src="character.sprites.front_default" class="img">
+   <section class="container personaje">
+        <div class="personaje__detalles">
+            <div class="personaje__img">
+                <img :src="character.sprites.front_default" class="personaje__imagen">
             </div>
             <div class="row justify-content-md-center">
-                <div class="conten-detail">
-                    <h2 class="title">{{ character.name }}</h2>
-                    <p>Peso: {{ character.weight }}</p>
-                    <p>Altura: {{ character.height }}</p>
-                    <p>Habilidades: <span v-for="ability in character.abilities" :key="ability.id"> {{ability.ability.name}},</span></p>
-                    <!-- <p>Peliculas: <span v-for="move in character.moves" :key="move.id"> {{move.move.name}}</span></p> -->
+                <div class="personaje__detail">
+                    <h2 class="personaje__title">{{ character.name }}</h2>
+                    <p class="personaje__parrafo">Peso: {{ character.weight }}</p>
+                    <p class="personaje__parrafo">Altura: {{ character.height }}</p>
+                    <p class="personaje__parrafo">
+                        Habilidades: 
+                        <span v-for="ability in character.abilities" :key="ability.id"> {{ability.ability.name}},</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-   
+
 </template>
 
 <script>
@@ -42,7 +44,7 @@ export default {
 </script>
 
 <style>
-.conten-personaje{
+.personaje{
     height: 93vh;
     text-align: center;
     display: flex;
@@ -50,12 +52,12 @@ export default {
     align-items: center;
     justify-content: center;
 }
-.detalles{
+.personaje__detalles{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.conten-img{
+.personaje__img{
     height: 350px;
     width: 350px;
     display: flex;
@@ -67,11 +69,11 @@ export default {
     border-radius: 300px;
     z-index: 1;
 }
-.img{
+.personaje__imagen{
     height: 330px;
     width: 330px;
 }
-.conten-detail{
+.personaje__detail{
     padding: 40px;
     width: 550px;
     background-color: #3a5da898;
@@ -80,10 +82,10 @@ export default {
     box-shadow: 10px 10px 10px black;
     border-radius: 0 50px 50px 0;
 }
-.title{
+.personaje__title{
     color: #fdea9f;
 }
-.conten-detail p{
+.personaje__parrafo{
     color: white;
 }
 </style>

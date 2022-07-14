@@ -1,7 +1,7 @@
 <template>
-  <div class="conten-paginador">
-    <button @click="paginationRoute(pagination.previous)" v-if="pagination.previous" class="btn btn-primary">Anterior</button>
-    <button @click="paginationRoute(pagination.next)" class="btn btn-primary">Siguiente</button>
+  <div class="paginador">
+    <button @click="paginationRoute(pagination.previous)" v-if="pagination.previous" class="btn btn-primary paginador__boton">Anterior</button>
+    <button @click="paginationRoute(pagination.next)" class="btn btn-primary paginador__boton">Siguiente</button>
   </div>
 </template>
 
@@ -25,21 +25,21 @@ export default {
 </script>
 
 <style>
-.conten-paginador{
+.paginador{
   margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.btn{
+.paginador__boton{
     background-color: #f8d95d;
     box-shadow: 5px 5px 10px black;
     color: black;
     margin: 7px;
 }
 
-.btn:hover{
+.paginador__boton:hover{
     background-color: #FFCB05;
     border: none;
 }

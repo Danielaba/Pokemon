@@ -22,7 +22,6 @@
         async mounted() {
             await this.getCharacters();  
         },
-        
         computed: {
             ...characters.mapGetters(['characters'])
         },
